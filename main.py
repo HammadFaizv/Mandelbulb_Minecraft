@@ -8,10 +8,15 @@ dim = 100
 pos = []
 max_iter = 20
 edge = 2 * dim + 1
-blocks = [ 238, 244, 246, 248, 240, 239, 236, 247, 249, 241, 237, 245, 250, 242, 243, 235 ]
+blocks = [ 238, 244, 246, 248, 240, 239, 236, 247, 249, 241, 237, 245, 250, 242, 243, 235 ] # blocks and block ids are given at the end
 
 def find_r(z):
     return math.sqrt(z[0]**2 + z[1]**2 + z[2]**2)
+
+'''
+You can play around with the block pallete and change the colours. You can swap the blocks with different block ids.
+You can even change the logic that the function uses to colour the mandelbulb. I have used a very staight forward one here.
+'''
 
 def find_block(vec):
     length = len(blocks)
@@ -19,8 +24,6 @@ def find_block(vec):
     r = int(math.sqrt(x**2 + y**2 + z**2))
     idx = r % length
     return idx
-    
-
 
 # make the array of positions
 for i in range(-dim,dim + 1):
@@ -38,6 +41,10 @@ for i in range(max_iter):
     print(f"Progress: { i*100/max_iter}%")
 
     # transform function
+    '''
+        refer below for the formula used :-
+        https://www.skytopia.com/project/fractal/2mandelbulb.html#formula
+    '''
     zeta2 = zeta.copy()
     r = np.sqrt(zeta2[:, 0]**2 + zeta2[:, 1]**2 + zeta2[:, 2]**2) # I had put zeta2[:, 1] instead of zeta2[:, 2] and went on to debug for next 2 days :)
     theta = np.arctan2( np.sqrt(zeta2[:, 0]**2 + zeta2[:, 1]**2) , zeta2[:,2])
