@@ -1,5 +1,6 @@
 # Mandelbulb_Minecraft
 Mandelbulb 3D fractal in minecraft using python. 
+![alt text](https://github.com/HammadFaizv/Mandelbulb_Minecraft/blob/main/mandelbulb%20mc.png?raw=true)
 
 ## The inspiration was a new minecraft project for my survival world. 
 I watched a [Mandelbulb video](https://www.youtube.com/watch?v=NJCiUVGiNyA&t=959s) by [Coding Train](https://www.youtube.com/@TheCodingTrain)
